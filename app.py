@@ -7,3 +7,5 @@ nome = "Aline"
 
 def saudacao(nome):
     return f'Olá {nome}! Bem-Vindo ao Python!!'
+
+print(saudacao(nome))
