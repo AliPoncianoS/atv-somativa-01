@@ -31,4 +31,7 @@ jobs:
 
       # 5. Rodar testes automáticos
       - name: Run tests
-        run: pytest
+        run: |
+          pytest
+        env:
+          PYTHONPATH: .
