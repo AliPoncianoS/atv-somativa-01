@@ -5,7 +5,6 @@ from src.app import saudacao
 def test_saudacao():
     assert saudacao("Aline") == "Olá Aline! Bem-Vindo ao Python!!"
 
-
 def setup_function():
     """Limpa a lista de usuários antes de cada teste."""
     usuarios.clear()
