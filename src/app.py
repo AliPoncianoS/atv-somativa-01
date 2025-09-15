@@ -1,13 +1,31 @@
-# Commit 1: arquivo inicial
-print("Ola! Esta é minha primeira aplicação em Python.")
+# app.py
 
-print("Commit 2: Estou aprendendo python passo a passo!")
+usuarios = []
 
-nome = "Aline"
+def adicionar_usuario(nome, idade):
+    """Adiciona um usuário ao sistema."""
+    usuario = {"nome": nome, "idade": idade}
+    usuarios.append(usuario)
+    return usuario
 
-def saudacao(nome):
-    return f'Olá {nome}! Bem-Vindo ao Python!!'
+def listar_usuarios():
+    """Retorna todos os usuários cadastrados."""
+    return usuarios
 
-print(saudacao(nome))
+def contar_usuarios():
+    """Retorna a quantidade de usuários cadastrados."""
+    return len(usuarios)
 
-print("Commit 5: versão final do branch desenvolvimento")
+def usuario_maior_que_18(nome):
+    """Verifica se o usuário é maior de idade."""
+    for u in usuarios:
+        if u["nome"] == nome:
+            return u["idade"] >= 18
+    return None
+
+if __name__ == "__main__":
+    adicionar_usuario("Aline", 25)
+    adicionar_usuario("Carlos", 17)
+    print(listar_usuarios())
+    print("Número de usuários:", contar_usuarios())
+    print("Aline é maior de idade?", usuario_maior_que_18("Aline"))
