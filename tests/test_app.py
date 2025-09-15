@@ -1,12 +1,9 @@
-# tests/test_app.py
-<<<<<<< Updated upstream
-from app import saudacao
+import pytest
+from src.app import adicionar_usuario, listar_usuarios, contar_usuarios, usuario_maior_que_18, usuarios
+from src.app import saudacao
 
 def test_saudacao():
     assert saudacao("Aline") == "Olá Aline! Bem-Vindo ao Python!!"
-=======
-import pytest
-from app import adicionar_usuario, listar_usuarios, contar_usuarios, usuario_maior_que_18, usuarios
 
 def setup_function():
     """Limpa a lista de usuários antes de cada teste."""
@@ -37,4 +34,3 @@ def test_usuario_maior_que_18_false():
 
 def test_usuario_maior_que_18_nao_existente():
     assert usuario_maior_que_18("Bruno") == None
->>>>>>> Stashed changes
