@@ -37,11 +37,14 @@ jobs:
           PYTHONPATH: .
         
   discord:
-    runs-on: ubuntu-20.4
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Run Discord Webhook
-        uses: johnnyhuy/actions-discord-git-webhook@main
+        uses: sniddl/discord-commits@v1.6
         with:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          template: "avatar-with-link"
+          include-extras: true
